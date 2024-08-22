@@ -14,7 +14,7 @@
 </ul>
 
 <h2>Configuração do Spring Initializr</h2>
-<img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/cb2aa541-53ec-4fac-b49c-740fc8b9d72c.png" alt="Configuração do Spring Initializr">
+https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/cb2aa541-53ec-4fac-b49c-740fc8b9d72c.png" alt="Configuração do Spring Initializr">
 
 <h2>Dependências</h2>
 <ul>
@@ -36,12 +36,12 @@ abre a seguinte pagina
 <h2>Endpoints</h2>
 <h3>GET https://app-java4.azurewebsites.net/brinquedos </h3>
 <p>Retorna todos os brinquedos cadastrados no sistema.</p>
-<img src="![image](https://github.com/user-attachments/assets/c4fc19d1-6661-4aa5-b150-bcfdc7da6bab)
+(https://github.com/user-attachments/assets/c4fc19d1-6661-4aa5-b150-bcfdc7da6bab)
 " alt="Exemplo de resposta GET">
 
 <h3>POST https://app-java4.azurewebsites.net/brinquedos/adicionar</h3>
 <p>Cadastra um novo brinquedo no sistema.</p>
-<img src=![image](https://github.com/user-attachments/assets/64eb057d-dfb9-47f2-8764-aca0631486c1)
+(https://github.com/user-attachments/assets/64eb057d-dfb9-47f2-8764-aca0631486c1)
 alt="Exemplo de requisição POST">
 <p>Exemplo JSON:</p>
 <code>

@@ -26,15 +26,23 @@
 
 <h2>Banco de Dados</h2>
 <p>O sistema utiliza o banco de dados Oracle para armazenar informações sobre os brinquedos. A configuração de acesso ao banco é feita através do arquivo <code>application.properties</code>.</p>
+iniciar o projeto e abrir a azure
+![image](https://github.com/user-attachments/assets/f3c24a38-3d93-4c87-97cc-31ccaf7a85c9)
+clicar no link
+abre a seguinte pagina
+![image](https://github.com/user-attachments/assets/9b4825b3-559a-4703-8c68-7faf592c83a9)
+
 
 <h2>Endpoints</h2>
-<h3>GET localhost:8081/brinquedos</h3>
+<h3>GET https://app-java4.azurewebsites.net/brinquedos </h3>
 <p>Retorna todos os brinquedos cadastrados no sistema.</p>
-<img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/7c112e67-0e4a-4d57-ac09-ddbaf8ab4c09.png" alt="Exemplo de resposta GET">
+<img src="![image](https://github.com/user-attachments/assets/c4fc19d1-6661-4aa5-b150-bcfdc7da6bab)
+" alt="Exemplo de resposta GET">
 
-<h3>POST localhost:8081/brinquedos/adicionar</h3>
+<h3>POST https://app-java4.azurewebsites.net/brinquedos/adicionar</h3>
 <p>Cadastra um novo brinquedo no sistema.</p>
-<img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/a8ad1b71-a833-4614-8d8c-85c7fe642096.png" alt="Exemplo de requisição POST">
+<img src=![image](https://github.com/user-attachments/assets/64eb057d-dfb9-47f2-8764-aca0631486c1)
+alt="Exemplo de requisição POST">
 <p>Exemplo JSON:</p>
 <code>
     {
@@ -44,6 +52,16 @@
         "tamanho": "Médio",
         "preco": 45
     }
+    PUT https://app-java4.azurewebsites.net/brinquedos/atualizar/9
+    atualiza um existente
+    ![image](https://github.com/user-attachments/assets/75cd3d63-d818-441e-800f-e53222715316)
+
+    Obter um brinquedo por ID (GET https://app-java4.azurewebsites.net/brinquedos/4)
+
+URL: http://localhost:8081/brinquedos/{id}
+Método: GET
+Descrição: Retorna um brinquedo específico pelo seu ID.
+
 </code>
 
 <h2>Execução do Projeto</h2>

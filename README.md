@@ -1,42 +1,42 @@
-<div class="container">
-    <h1>Sistema de Gerenciamento de Brinquedos</h1>
-    <p>O Sistema de Gerenciamento de Brinquedos é uma aplicação desenvolvida para uma empresa de brinquedos voltada para crianças até 12 anos. O objetivo do sistema é permitir o cadastro, consulta, atualização e exclusão de brinquedos através de uma interface web, utilizando o framework Spring Boot e o banco de dados Oracle.</p>
 
-    <h2>Equipe</h2>
-    <ul>
-        <li>RM 98660 - Leonardo Valentim de Souza</li>
-        <li>RM 97714 - João Victor Leite Firmino</li>
-        <li>RM 99618 - Gustavo dos Santos Correa</li>
-        <li>RM 551201 - Lucas Cazzaro</li>
-        <li>RM 99219 - Ronaldo Riyudi Noda</li>
-        <li>RM 99985 - Felipe Batista Gregorio</li>
-    </ul>
+    Sistema de Gerenciamento de Brinquedos
+   O Sistema de Gerenciamento de Brinquedos é uma aplicação desenvolvida para uma empresa de brinquedos voltada para crianças até 12 anos. O objetivo do sistema é permitir o cadastro, consulta, atualização e exclusão de brinquedos através de uma interface web,     utilizando o framework Spring Boot e o banco de dados Oracle.
 
-    <h2>Configuração do Spring Initializr</h2>
-    <p>Configuração utilizada para iniciar o projeto no Spring Initializr:</p>
-    <img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/cb2aa541-53ec-4fac-b49c-740fc8b9d72c.png" alt="Configuração do Spring Initializr">
+    
+    
+        RM 98660 - Leonardo Valentim de Souza
+        RM 97714 - João Victor Leite Firmino
+        RM 99618 - Gustavo dos Santos Correa
+        RM 551201 - Lucas Cazzaro
+        RM 99219 - Ronaldo Riyudi Noda
+        
+    
 
-    <h2>Dependências</h2>
-    <ul>
-        <li>Spring Web</li>
-        <li>Spring Data JPA</li>
-        <li>Oracle Driver</li>
-        <li>Spring Boot DevTools</li>
-    </ul>
+    Configuração do Spring Initializr
+    Configuração utilizada para iniciar o projeto no Spring Initializr:
 
-    <h2>Banco de Dados</h2>
+
+    Dependências
+    
+        Spring Web
+        Spring Data JPA
+        Oracle Driver
+        Spring Boot DevTools
+    
+
+    Banco de Dados
     <p>O sistema utiliza o banco de dados Oracle para armazenar informações sobre os brinquedos. A configuração de acesso ao banco é feita através do arquivo <code>application.properties</code>.</p>
 
-    <h2>Endpoints</h2>
-    <h3>GET /brinquedos</h3>
-    <p>Retorna todos os brinquedos cadastrados no sistema.</p>
-    <p>Exemplo de resposta:</p>
-    <img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/21b34f16-0a26-480e-8fbd-810f5939d67e.png" alt="Exemplo de resposta GET">
+    Endpoints
+    GET https://app-240822204808.azurewebsites.net/brinquedos/4
+    etorna todos os brinquedos cadastrados no sistema.
+    Exemplo de resposta:</p>
+![image](https://github.com/user-attachments/assets/330ca27e-75c6-4d93-b977-5b7285372e17)
 
-    <h3>POST /brinquedos/adicionar</h3>
-    <p>Cadastra um novo brinquedo no sistema.</p>
-    <p>Exemplo de requisição:</p>
-    <code>
+    POST /brinquedos/adicionar
+    Cadastra um novo brinquedo no sistema.
+    Exemplo de requisição:
+    
     {
         "nome": "Bola de basquete",
         "tipo": "Esportivo",
@@ -44,12 +44,14 @@
         "tamanho": "Médio",
         "preco": 45
     }
-    </code>
-    <img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/64eb057d-dfb9-47f2-8764-aca0631486c1.png" alt="Exemplo de requisição POST">
+![image](https://github.com/user-attachments/assets/1fa602aa-0248-4449-8d48-80f244da0177)
 
-    <h3>PUT /brinquedos/atualizar/{id}</h3>
-    <p>Atualiza as informações de um brinquedo existente.</p>
-    <p>Exemplo de requisição:</p>
+   
+   
+
+    PUT /brinquedos/atualizar/{id}
+    Atualiza as informações de um brinquedo existente
+    Exemplo de requisição
     <code>
     {
         "nome": "Boneca de Pano",
@@ -58,19 +60,22 @@
         "tamanho": "Pequeno",
         "preco": 59.99
     }
-    </code>
-    <img src="https://github.com/gustavo-specxx/javaCheckpoint2/assets/117688531/75cd3d63-d818-441e-800f-e53222715316.png" alt="Exemplo de requisição PUT">
+  ![image](https://github.com/user-attachments/assets/3c572c3b-b192-4763-a561-08e103ab1a6d)
 
-    <h3>DELETE /brinquedos/excluir/{id}</h3>
-    <p>Exclui um brinquedo do sistema pelo seu ID.</p>
+![image](https://github.com/user-attachments/assets/ebcfec3e-908b-403e-982e-fcdfa2575e44)
 
-    <h2>Execução do Projeto</h2>
-    <ol>
-        <li>Clone o repositório do projeto.</li>
-        <li>Importe o projeto em sua IDE preferida (IntelliJ, Eclipse ou NetBeans).</li>
-        <li>Atualize as dependências Maven, se necessário.</li>
-        <li>Configure o banco de dados Oracle conforme as instruções.</li>
-        <li>Execute o projeto.</li>
-        <li>Utilize os endpoints listados acima para interagir com a API via Postman.</li>
-    </ol>
-</div>
+
+    DELETE /brinquedos/excluir/{id}
+    exclui um brinquedo do sistema pelo seu ID
+![image](https://github.com/user-attachments/assets/6a9bff16-5c5f-4b04-9da1-0b8bbfa1e348)
+
+    Execução do Projeto
+  
+        Clone o repositório do projeto.</li>
+        Importe o projeto em sua IDE preferida (IntelliJ, Eclipse ou NetBeans).
+        Atualize as dependências Maven, se necessário.
+        Configure o banco de dados Oracle conforme as instruções.
+        Execute o projeto.
+        Utilize os endpoints listados acima para interagir com a API via Postman.
+![image](https://github.com/user-attachments/assets/ff194965-b035-47e1-b68a-12aa6345f3da)
+

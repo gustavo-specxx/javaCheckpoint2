@@ -1,45 +1,75 @@
 package com.chechpoint2JAVA.java2;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/brinquedos")
 public class BrinquedoController {
 
-    @Autowired
-    private BrinquedoRepository brinqueRepo;
+    private final BrinquedoRepository brinqueRepo;
+
+    // Injeção de dependência pelo construtor
+    public BrinquedoController(BrinquedoRepository brinqueRepo) {
+        this.brinqueRepo = brinqueRepo;
+    }
 
     // Listar todos os brinquedos
     @GetMapping
-    public ResponseEntity<List<Brinquedo>> listarBrinquedos() {
-        List<Brinquedo> brinquedos = (List<Brinquedo>) brinqueRepo.findAll();
-        return ResponseEntity.ok(brinquedos);
+    public String listarBrinquedos(Model model) {
+        List<Brinquedo> brinquedos = brinqueRepo.findAll();
+        model.addAttribute("brinquedos", brinquedos);
+        return "listarBrinquedos"; // Nome do template Thymeleaf para listar os brinquedos
     }
 
     // Obter um brinquedo por ID
     @GetMapping("/{id}")
-    public ResponseEntity<Brinquedo> obterBrinquedoPorId(@PathVariable Long id) {
+    public String obterBrinquedoPorId(@PathVariable Long id, Model model) {
         Optional<Brinquedo> brinquedoOpt = brinqueRepo.findById(id);
-        return brinquedoOpt.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+        if (brinquedoOpt.isPresent()) {
+            model.addAttribute("brinquedo", brinquedoOpt.get());
+            return "detalhesBrinquedo"; // Nome do template Thymeleaf para mostrar detalhes do brinquedo
+        } else {
+            return "erro"; // Nome do template Thymeleaf para mostrar uma página de erro
+        }
+    }
+
+    // Mostrar o formulário para adicionar um novo brinquedo
+    @GetMapping("/adicionar")
+    public String mostrarFormularioAdicionar(Model model) {
+        model.addAttribute("brinquedo", new Brinquedo());
+        return "adicionarBrinquedo"; // Nome do template Thymeleaf para adicionar um novo brinquedo
     }
 
     // Adicionar um novo brinquedo
     @PostMapping("/adicionar")
-    public ResponseEntity<Brinquedo> adicionarBrinquedo(@RequestBody Brinquedo brinquedo) {
+    public String adicionarBrinquedo(@ModelAttribute Brinquedo brinquedo, Model model) {
         Brinquedo novoBrinquedo = brinqueRepo.save(brinquedo);
-        return ResponseEntity.status(HttpStatus.CREATED).body(novoBrinquedo);
+        model.addAttribute("brinquedo", novoBrinquedo);
+        return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
+    }
+
+    // Mostrar o formulário para atualizar um brinquedo existente
+    @GetMapping("/atualizar/{id}")
+    public String mostrarFormularioAtualizar(@PathVariable Long id, Model model) {
+        Optional<Brinquedo> brinquedoOpt = brinqueRepo.findById(id);
+        if (brinquedoOpt.isPresent()) {
+            model.addAttribute("brinquedo", brinquedoOpt.get());
+            return "atualizarBrinquedo"; // Nome do template Thymeleaf para atualizar o brinquedo
+        } else {
+            return "erro"; // Nome do template Thymeleaf para mostrar uma página de erro
+        }
     }
 
     // Atualizar um brinquedo existente
-    @PutMapping("/atualizar/{id}")
-    public ResponseEntity<Brinquedo> atualizarBrinquedo(@PathVariable Long id, @RequestBody Brinquedo brinquedoAtualizado) {
+    @PostMapping("/atualizar/{id}")
+    public String atualizarBrinquedo(@PathVariable Long id, @ModelAttribute Brinquedo brinquedoAtualizado, Model model) {
         return brinqueRepo.findById(id)
                 .map(brinquedo -> {
                     brinquedo.setNome(brinquedoAtualizado.getNome());
@@ -47,20 +77,20 @@ public class BrinquedoController {
                     brinquedo.setClassificacao(brinquedoAtualizado.getClassificacao());
                     brinquedo.setTamanho(brinquedoAtualizado.getTamanho());
                     brinquedo.setPreco(brinquedoAtualizado.getPreco());
-                    Brinquedo brinquedoSalvo = brinqueRepo.save(brinquedo);
-                    return ResponseEntity.ok(brinquedoSalvo);
+                    brinqueRepo.save(brinquedo);
+                    return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
                 })
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+                .orElse("erro"); // Nome do template Thymeleaf para mostrar uma página de erro
     }
 
     // Excluir um brinquedo
-    @DeleteMapping("/excluir/{id}")
-    public ResponseEntity<Void> excluirBrinquedo(@PathVariable Long id) {
+    @GetMapping("/excluir/{id}")
+    public String excluirBrinquedo(@PathVariable Long id, Model model) {
         if (brinqueRepo.existsById(id)) {
             brinqueRepo.deleteById(id);
-            return ResponseEntity.noContent().build();
+            return "redirect:/brinquedos"; // Redireciona para a lista de brinquedos
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return "erro"; // Nome do template Thymeleaf para mostrar uma página de erro
         }
     }
 }

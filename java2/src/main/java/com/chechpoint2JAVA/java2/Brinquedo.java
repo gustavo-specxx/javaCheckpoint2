@@ -15,21 +15,21 @@ public class Brinquedo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "brinquedo_sequence")
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false, updatable = false)
     private Long id;
 
-    @Column(name = "NOME")
+    @Column(name = "NOME", nullable = false)
     private String nome;
 
-    @Column(name = "TIPO")
+    @Column(name = "TIPO", nullable = false)
     private String tipo;
 
-    @Column(name = "CLASSIFICACAO")
+    @Column(name = "CLASSIFICACAO", nullable = false)
     private String classificacao;
 
-    @Column(name = "TAMANHO")
+    @Column(name = "TAMANHO", nullable = false)
     private String tamanho;
 
-    @Column(name = "PRECO")
+    @Column(name = "PRECO", nullable = false)
     private BigDecimal preco;
 }

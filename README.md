@@ -1,4 +1,5 @@
 LINK DO DEPLOY
+https://app-240903194908.azurewebsites.net/brinquedos
     Sistema de Gerenciamento de Brinquedos
    O Sistema de Gerenciamento de Brinquedos é uma aplicação desenvolvida para uma empresa de brinquedos voltada para crianças até 12 anos. O objetivo do sistema é permitir o cadastro, consulta, atualização e exclusão de brinquedos através de uma interface web,     utilizando o framework Spring Boot e o banco de dados Oracle.
 

@@ -28,26 +28,26 @@ LINK DO DEPLOY
     <p>O sistema utiliza o banco de dados Oracle para armazenar informações sobre os brinquedos. A configuração de acesso ao banco é feita através do arquivo <code>application.properties</code>.</p>
 
     PAGINA INICIAL
-    ![image](https://github.com/user-attachments/assets/833ec396-ca51-4076-97c1-20b33794eaca)
+![image](https://github.com/user-attachments/assets/833ec396-ca51-4076-97c1-20b33794eaca)
 
 
     
     Cadastra um novo brinquedo no sistema.
     Exemplo de requisição:
     
-      ![image](https://github.com/user-attachments/assets/1a6009ed-3431-47f1-a018-4eb2c1140549)
+![image](https://github.com/user-attachments/assets/1a6009ed-3431-47f1-a018-4eb2c1140549)
 
    
         verifique que foi adicionado
-        ![image](https://github.com/user-attachments/assets/8592a668-f9c7-46bc-86f4-0302e0a37998)
+![image](https://github.com/user-attachments/assets/8592a668-f9c7-46bc-86f4-0302e0a37998)
 
        Detalhes do produto
-       ![image](https://github.com/user-attachments/assets/ec087036-63b2-4cf9-a92c-8d50f26f7931)
+![image](https://github.com/user-attachments/assets/ec087036-63b2-4cf9-a92c-8d50f26f7931)
 
     Atualiza as informações de um brinquedo existente
-      ![image](https://github.com/user-attachments/assets/e4056a4f-d460-4d88-b1c9-68d01584b349)
+![image](https://github.com/user-attachments/assets/e4056a4f-d460-4d88-b1c9-68d01584b349)
 
-    ![image](https://github.com/user-attachments/assets/84903b0c-6f02-42bd-b1d0-8ede6cc4c958)
+![image](https://github.com/user-attachments/assets/84903b0c-6f02-42bd-b1d0-8ede6cc4c958)
 
 
     DELETE /brinquedos/excluir/{id}

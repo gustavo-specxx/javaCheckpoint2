@@ -1,5 +1,5 @@
 LINK DO DEPLOY
-https://app-240903194908.azurewebsites.net/brinquedos
+https://app-java2brinquedos.azurewebsites.net/login
     Sistema de Gerenciamento de Brinquedos
    O Sistema de Gerenciamento de Brinquedos é uma aplicação desenvolvida para uma empresa de brinquedos voltada para crianças até 12 anos. O objetivo do sistema é permitir o cadastro, consulta, atualização e exclusão de brinquedos através de uma interface web,     utilizando o framework Spring Boot e o banco de dados Oracle.
 
@@ -18,7 +18,8 @@ https://app-240903194908.azurewebsites.net/brinquedos
 
 
     Dependências
-    
+
+        Spring security 
         Spring Web
         Spring Data JPA
         Oracle Driver
@@ -26,42 +27,56 @@ https://app-240903194908.azurewebsites.net/brinquedos
     
 
     Banco de Dados
-    <p>O sistema utiliza o banco de dados Oracle para armazenar informações sobre os brinquedos. A configuração de acesso ao banco é feita através do arquivo <code>application.properties</code>.</p>
+    <p>O sistema utiliza o banco de dados Oracle para armazenar informações sobre os brinquedos e usuarios. A configuração de acesso ao banco é feita através do arquivo application.properties
 
-    PAGINA INICIAL
-![image](https://github.com/user-attachments/assets/833ec396-ca51-4076-97c1-20b33794eaca)
-
-
-    
-    Cadastra um novo brinquedo no sistema.
-    Exemplo de requisição:
-    
-![image](https://github.com/user-attachments/assets/1a6009ed-3431-47f1-a018-4eb2c1140549)
-
-   
-        verifique que foi adicionado
-![image](https://github.com/user-attachments/assets/8592a668-f9c7-46bc-86f4-0302e0a37998)
-
-       Detalhes do produto
-![image](https://github.com/user-attachments/assets/ec087036-63b2-4cf9-a92c-8d50f26f7931)
-
-    Atualiza as informações de um brinquedo existente
-![image](https://github.com/user-attachments/assets/e4056a4f-d460-4d88-b1c9-68d01584b349)
-
-![image](https://github.com/user-attachments/assets/84903b0c-6f02-42bd-b1d0-8ede6cc4c958)
+    PAGINA INICIAL LOGIN
+![image](https://github.com/user-attachments/assets/3f916bf7-69c9-4250-bff0-f547b6316ead)
 
 
-    DELETE /brinquedos/excluir/{id}
-    exclui um brinquedo do sistema pelo seu ID
+
+    mensagem quando user nao esta cadastrado 
+![image](https://github.com/user-attachments/assets/e0f86bee-22b3-40cb-92d5-04a8d4c07dc8)
+
+    cadastro de usuarios 
+![image](https://github.com/user-attachments/assets/5ca16362-63d1-4cd5-a974-a07cb348b4de)
+
+    usuario cadastrado volta para login
+![image](https://github.com/user-attachments/assets/38ed54d9-a1c3-4c9c-8cd6-5903d23f4527)
+
+
+       Login
+![image](https://github.com/user-attachments/assets/24af8d63-3737-4167-84be-83395d6adb2d)
+
+    Lista de brinquedos
+![image](https://github.com/user-attachments/assets/5301947a-3d83-4420-91ac-98fd00d6e619)
+
+
+    adicionar
+![image](https://github.com/user-attachments/assets/59ec2b02-defb-4a82-a011-47889ce2644d)
+
+    detalhes
+![image](https://github.com/user-attachments/assets/323a1bcb-16a7-4036-8608-b4b6dae2e0cb)
+
+    atualizar
+![image](https://github.com/user-attachments/assets/77fa131a-38fd-4f4a-9f8a-77486a0f7e3c)
+
+    excluir 
+![image](https://github.com/user-attachments/assets/ca972029-f4cf-41d4-a5f8-1212a2de5a14)
+
+    Sair volta para login inicial
+![image](https://github.com/user-attachments/assets/677796e9-6e84-4ecb-92e7-f0a4085e5bd5)
+![image](https://github.com/user-attachments/assets/24e2ff46-d002-4759-93d2-8b92f71f60e2)
+
+
 
 
     Execução do Projeto
   
-        Clone o repositório do projeto.</li>
+        Clone o repositório do projeto.
         Importe o projeto em sua IDE preferida (IntelliJ, Eclipse ou NetBeans).
         Atualize as dependências Maven, se necessário.
         Configure o banco de dados Oracle conforme as instruções.
         Execute o projeto.
-        Utilize os endpoints listados acima para interagir com a API via Postman.
+    
 ![image](https://github.com/user-attachments/assets/ff194965-b035-47e1-b68a-12aa6345f3da)
 

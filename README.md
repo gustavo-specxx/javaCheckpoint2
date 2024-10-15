@@ -77,6 +77,6 @@ https://app-java2brinquedos.azurewebsites.net/login
         Atualize as dependências Maven, se necessário.
         Configure o banco de dados Oracle conforme as instruções.
         Execute o projeto.
-    
-![image](https://github.com/user-attachments/assets/ff194965-b035-47e1-b68a-12aa6345f3da)
+![image](https://github.com/user-attachments/assets/35e28be1-a06b-4bfe-a945-1ffb5adfd78e)
 
+hospedado na azure
